@@ -37,7 +37,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'hamrofutsal',
+    #local apps
+    'users',
+    'team',
+    'matchmaking',
+
+    #third party
+    'rest_framework',
+    'rest_framework_simplejwt',
+    'corsheaders',
+
 ]
 
 MIDDLEWARE = [
@@ -99,6 +108,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
